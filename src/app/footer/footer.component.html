@@ -1,0 +1,78 @@
+<div class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <img src="https://achevers-file-manager.s3.ap-south-1.amazonaws.com/uploads/think_source_logo.png" alt="">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4 contact">
+              <h6>Contact Us</h6><br>
+              <p><a href="mailto:{{mail}}">{{mail}}</a></p>
+              <p>+1-2345-6789</p>
+              <p>123 Ave, New York, USA</p>
+              
+              <i class="fab fa-linkedin"></i>
+              <i class="fab fa-facebook"></i>
+              <i class="fab fa-twitter"></i>
+              <i class="fab fa-instagram"></i>
+
+            </div>
+            <div class="col-sm-2">
+                <h6>Services</h6><br>
+                <p>
+                    <span (click)="getService(1)">ManPower RPO</span>
+                </p>
+                <p>
+                    <span (click)="getService(3)">HR Services</span>
+                </p>
+                <p>
+                    <span (click)="getService(2)">BPO</span>
+                </p>
+            </div>
+            <div class="col-sm-2">
+                <h6>Technologies</h6><br>
+                <p *ngFor="let item of technology_list" (click)="getSkillDetails(item)">
+                   <span>{{item.name}}</span>
+                </p>
+                 <!-- <p>DA/DE with GenAI</p>
+                 <p>Azure & AWS</p>
+                 <p>DS with genie</p>
+                 <p>Devops & Python</p>
+                 <p>Java FullStack</p>
+                 <p>Android & IOS</p>
+                 <p>Network Security</p>
+                 <p>Salesforce with Data Cloud</p> -->
+            </div>
+            <div class="col-sm-2">
+                <h6>Careers</h6><br>
+                <p>Find a Job</p>
+
+                <h6>Blogs</h6><br>
+                
+            </div>
+            <div class="col-sm-2">
+                <h6>Get the app</h6><br>
+                <img src="https://cdn.freebiesupply.com/logos/large/2x/download-on-the-app-store-apple-logo-black-and-white.png" alt="" style="width: 100%;height: auto;"><br><br>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Google_Play_Store_badge_EN.svg/2560px-Google_Play_Store_badge_EN.svg.png" alt="" style="width: 100%;height: auto;">
+
+            </div>
+        </div><br>
+        <div class="row copyright">
+            <div class="col-sm-2">
+                <p>Privacy Policy</p>
+            </div>
+            <div class="col-sm-2">
+                <p>Terms & Conditions</p>
+            </div>
+            <div class="col-sm-5"></div>
+            <div class="col-sm-3">
+                <p>Copyright © 2024. All rights reserved.</p>
+            </div>
+
+
+        </div>
+    </div>
+    <br>
+
+</div>

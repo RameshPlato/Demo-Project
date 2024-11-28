@@ -1,0 +1,27 @@
+/* Adjust logo size */
+.navbar-brand  {
+    height: 40px;
+    color: white;
+  }
+  .navbar{
+    background-color: transparent;
+  }
+  /* Optional: Adjust the margin for navbar items */
+  .navbar-nav .nav-item {
+    margin-left: 20px;
+  }
+  
+  .navbar-nav .nav-link {
+    color: white !important;
+  }
+  .nav-item{
+    cursor: pointer;
+  }
+  
+  /* Responsive navbar */
+  @media (max-width: 768px) {
+    .navbar-nav {
+      text-align: center;
+    }
+  }
+  

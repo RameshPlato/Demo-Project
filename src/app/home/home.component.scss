@@ -1,0 +1,240 @@
+.carousel-content {
+  color: white;
+}
+.carousel-content h1{
+   font-size: 55px;
+}
+
+.carousel-inner {
+  height: 100%;
+}
+
+.carousel-item {
+  margin-top: 100px;
+}
+
+.carousel-content span {
+  color: #FFF55B;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  position: absolute;
+  top: 50%;
+  z-index: 1;
+  width: 5%;
+  transform: translateY(-40%);
+  margin: -50px;
+}
+
+.carousel-image {
+  margin-left: -100px;
+  transform: rotate(0deg) scaleX(-1);
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-control-prev {
+  left: 0;
+}
+
+.carousel-control-next {
+  right: 0;
+}
+
+.carousel-indicators {
+  // position: absolute;
+  // top: 500px;
+  // width: 100%;
+  // display: flex;
+  // justify-content: center;
+  // padding-left: 0;
+  // margin-bottom: 0;
+  list-style: none;
+}
+
+.carousel-indicators button {
+  background-color: rgba(0, 0, 0, 0.5);
+  /* Dot color */
+  border: none;
+  width: 10px;
+  height: 10px;
+  margin: 0 4px;
+  border-radius: 50%;
+}
+
+.carousel-indicators .active {
+  background-color: #007bff;
+  /* Active dot color */
+}
+
+.sub_heading {
+  text-align: center;
+
+}
+
+.sub_heading h3 {
+  font-weight: lighter;
+  color: #FFF55B;
+  font-size: 22px;
+}
+
+.sub_heading h2 {
+  color: #fff;
+}
+
+.talent_btn {
+  color: white;
+  margin: 10px;
+  padding: 8px 20px;
+  border-radius: 50px;
+  background: linear-gradient(to bottom, #890262, #0B0140);
+  cursor: pointer;
+}
+
+.analysis_card {
+  border: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: white;
+}
+
+h2 {
+  font-size: 1.75rem;
+  color: #007bff;
+}
+
+canvas {
+  max-width: 100%;
+  height: auto;
+}
+
+
+/* Basic Card Style */
+.card {
+  width: 100%;
+  max-width: 350px;
+  margin: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #6A014C;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* Image */
+.card-img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  background-color: white;
+  // border-bottom: 1px solid #ddd;
+}
+
+/* Card Body */
+.card-body {
+  padding: 15px;
+
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.card-text {
+  font-size: 1rem;
+  color: #fff;
+  margin-bottom: 15px;
+}
+
+.card span {
+  color: white;
+}
+
+/* Button */
+.btn {
+  padding: 10px 20px;
+  background-color: #d4139d;
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #8a0966;
+}
+.skills{
+  cursor: pointer;
+  margin-top: -80px;
+}
+.carousel-control-prev-icon, .carousel-control-next-icon{
+  margin-top: 80px;
+}
+
+.tech_offers {
+  padding: 20px;
+  text-align: center;
+  background: linear-gradient(to right, #c2058c, #1e02a9);
+}
+
+.tech_offers img {
+  width: 150px;
+  height: 120px;
+}
+
+.tech_offers h4 {
+  font-size: 20px;
+  color: white;
+  margin: 10px;
+  text-align: center;
+}
+
+.blog_card {
+  width: 100%;
+  max-width: 350px;
+  margin: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #6A014C;
+  transition: transform 0.3s ease;
+}
+
+.blog_card .card-body {
+  padding: 15px;
+  height: 250px;
+}
+
+.blog_card .card-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: white;
+}
+
+.blog_card .card-text {
+  font-weight: lighter;
+  font-size: 1rem;
+  color: white;
+  margin-bottom: 15px;
+}
+
+.blog_card span {
+  color: white;
+}
+
+.customers img {
+  width: 100%;
+  height: 100%;
+}

@@ -1,0 +1,176 @@
+<app-navbar></app-navbar><br>
+<div class="services">
+   <div class="serv">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 align-items-center justify-content-center" style="margin-top: 150px;">
+                <h1 class="service_tagline">Technology Offerings at Thinksource</h1><br>
+                <p class="service_tagline_content">At Thinksource, we bring a competitive edge to your business by providing pre-vetted, highly skilled professionals in a wide range of cutting-edge technologies. Our bench strength ensures you get the right talent, ready to onboard, without delays.
+                </p>
+            </div>
+            <div class="col-sm-6 d-flex align-items-center justify-content-center">
+                <img src="https://png.pngtree.com/png-vector/20240427/ourmid/pngtree-a-man-work-in-office-png-image_12329854.png"
+                    class="tag_image" alt="">
+            </div>
+        </div> <br><br>
+    </div>
+   </div>
+    <div class="row ">
+        <div class="col-sm-2 service_item" *ngFor="let item of technology_list"  (click)="loadService(item.id)"
+        [style.background-color]="item.status ? '#360227':''">
+            {{item.name}}
+        </div>
+    </div>
+    <br><br>
+    <div class="container">
+        <div class="row services_details" *ngIf="technology_list[0].status">
+            <h1>Java Full Stack Development</h1>
+            <p>Build scalable, robust, and high-performance web applications with our Java Full Stack experts. From front-end to back-end, our developers are proficient in delivering end-to-end solutions tailored to your business.</p>
+            
+            <div class="container col-sm-10 content">
+                <h3 class="sub_heading">Core Skills Include:</h3>
+                <ul>
+                    <li><strong>Front-End:</strong> Angular, React, HTML5, CSS3, and JavaScript.</li>
+                    <li><strong>Back-End:</strong> Spring Boot, Hibernate, RESTful APIs, and Microservices.</li>
+                    <li><strong>Databases:</strong> MySQL, PostgreSQL, and MongoDB.</li>
+                    <li><strong>Tools:</strong> Jenkins, Docker, and Kubernetes for CI/CD.</li>
+                </ul>
+        
+                <h3 class="sub_heading">Applications:</h3>
+                <ul>
+                    <li>Enterprise web solutions.</li>
+                    <li>E-commerce platforms.</li>
+                    <li>Cloud-based applications.</li>
+                </ul>
+        
+                <h3 class="sub_heading">CTA:</h3>
+                <p>*"Hire top Java Full Stack developers today and accelerate your projects!"*</p>
+            </div>
+        </div>
+
+        <div class="row services_details" *ngIf="technology_list[1].status">
+            <h1>DevOps Engineering</h1>
+            <p>Streamline your development lifecycle with our DevOps specialists. From automation to infrastructure management, we help bridge the gap between development and operations teams.</p>
+            
+            <div class="container col-sm-10 content">
+                <h3 class="sub_heading">Core Expertise Includes:</h3>
+                <ul>
+                    <li>CI/CD Pipeline Setup: Jenkins, GitLab, CircleCI.</li>
+                    <li>Configuration Management: Ansible, Puppet, and Chef.</li>
+                    <li>Containerization: Docker and Kubernetes.</li>
+                    <li>Cloud Integration: AWS, Azure, and Google Cloud.</li>
+                </ul>
+        
+                <h3 class="sub_heading">Benefits:</h3>
+                <ul>
+                    <li>Faster development and deployment cycles.</li>
+                    <li>Enhanced system reliability and scalability.</li>
+                </ul>
+        
+                <h3 class="sub_heading">CTA:</h3>
+                <p>*"Optimize your IT operations with Thinksource DevOps experts!"*</p>
+            </div>
+        </div>
+
+        <div class="row services_details" *ngIf="technology_list[2].status">
+            <h1>Azure & AWS Cloud Solutions</h1>
+            <p>Unlock the power of the cloud with Thinksource. Our Azure and AWS experts deliver secure, scalable, and cost-effective solutions tailored to your business needs.</p>
+            
+            <div class="container col-sm-10 content">
+                <h3 class="sub_heading">Specialisations Include:</h3>
+                <ul>
+                    <li>Cloud Infrastructure Design and Deployment.</li>
+                    <li>Migration of On-Premises Systems to the Cloud.</li>
+                    <li>Serverless Architecture and Microservices.</li>
+                    <li>Cost Optimization and Cloud Security.</li>
+                </ul>
+        
+                <h3 class="sub_heading">Industries Served:</h3>
+                <ul>
+                    <li>Healthcare, Finance, Retail, and more.</li>
+                </ul>
+        
+                <h3 class="sub_heading">CTA:</h3>
+                <p>*"Leverage the cloud with Thinksource—contact us for your cloud needs!"*</p>
+            </div>
+        </div>
+
+        <div class="row services_details" *ngIf="technology_list[3].status">
+            <h1>Android & iOS Development</h1>
+            <p>Stay ahead in the mobile-first world with our skilled Android and iOS developers. We create intuitive, secure, and high-performance mobile applications for various industries.</p>
+            
+            <div class="container col-sm-10 content">
+                <h3 class="sub_heading">Technologies and Tools:</h3>
+                <ul>
+                    <li><strong>Android:</strong> Kotlin, Java, Android Studio.</li>
+                    <li><strong>iOS:</strong> Swift, Objective-C, Xcode.</li>
+                    <li><strong>Cross-Platform:</strong> Flutter, React Native.</li>
+                    <li><strong>Backend Integration:</strong> Firebase, RESTful APIs, and GraphQL.</li>
+                </ul>
+        
+                <h3 class="sub_heading">Applications We Deliver:</h3>
+                <ul>
+                    <li>Custom Mobile Apps.</li>
+                    <li>E-commerce and Retail Solutions.</li>
+                    <li>Enterprise Mobility Solutions.</li>
+                </ul>
+        
+                <h3 class="sub_heading">CTA:</h3>
+                <p>*"Bring your mobile app idea to life with our Android & iOS experts!"*</p>
+            </div>
+        </div>
+
+        <div class="row services_details" *ngIf="technology_list[4].status">
+            <h1>Python Development</h1>
+            <p>Harness the versatility of Python to build everything from web applications to AI-powered solutions. Our Python developers specialise in creating innovative, scalable, and efficient applications.</p>
+            
+            <div class="container col-sm-10 content">
+                <h3 class="sub_heading">Key Expertise Areas:</h3>
+                <ul>
+                    <li><strong>Web Development:</strong> Django, Flask.</li>
+                    <li><strong>Data Science & Machine Learning:</strong> Pandas, NumPy, TensorFlow.</li>
+                    <li><strong>Automation:</strong> Scripting and Process Automation.</li>
+                    <li><strong>API Development:</strong> RESTful and GraphQL APIs.</li>
+                </ul>
+        
+                <h3 class="sub_heading">Applications:</h3>
+                <ul>
+                    <li>AI and ML Models.</li>
+                    <li>Data Analytics Platforms.</li>
+                    <li>SaaS Solutions.</li>
+                </ul>
+        
+                <h3 class="sub_heading">CTA:</h3>
+                <p>*"Tap into the potential of Python with our experienced developers."*</p>
+            </div>
+        </div>
+
+        <div class="row services_details" *ngIf="technology_list[5].status">
+            <h1>Mulesoft Integration</h1>
+            <p>Simplify your enterprise integration with Thinksource’s Mulesoft experts. Our developers specialize in creating seamless connections between applications, data, and devices.</p>
+            
+            <div class="container col-sm-10 content">
+                <h3 class="sub_heading">Core Competencies:</h3>
+                <ul>
+                    <li><strong>API-Led Connectivity:</strong> Design and build APIs using Mulesoft Anypoint Platform.</li>
+                    <li><strong>Integration:</strong> ERP, CRM, and legacy systems.</li>
+                    <li>Real-Time Data Synchronisation.</li>
+                    <li>Cloud and Hybrid Integration Solutions.</li>
+                </ul>
+        
+                <h3 class="sub_heading">Benefits:</h3>
+                <ul>
+                    <li>Accelerated time-to-market.</li>
+                    <li>Improved system interoperability.</li>
+                </ul>
+        
+                <h3 class="sub_heading">CTA:</h3>
+                <p>*"Streamline your business integrations with Mulesoft experts from Thinksource."*</p>
+            </div>
+        </div>
+        
+                
+        
+    </div>
+</div><br><br>
+<app-footer></app-footer>

@@ -1,0 +1,129 @@
+<app-navbar></app-navbar>
+<div class="services">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 d-flex align-items-center justify-content-center">
+                <h1 class="service_tagline">Services Overview Section</h1>
+            </div>
+            <div class="col-sm-6 d-flex align-items-center justify-content-center">
+                <img src="https://png.pngtree.com/png-vector/20240427/ourmid/pngtree-a-man-work-in-office-png-image_12329854.png"
+                    class="tag_image" alt="">
+            </div>
+        </div> <br><br>
+    </div>
+    <div class="row ">
+        <div class="col-sm-4 service_item" *ngFor="let item of services_list"  (click)="loadService(item.id)"
+        [style.background-color]="item.status ? '#360227':''">
+            {{item.title}}
+        </div>
+    </div>
+    <br><br>
+    <div class="container">
+        <div class="row services_details" *ngIf="services_list[0].status">
+            <h1>Manpower RPO (Recruitment Process Outsourcing) </h1>
+            <p>At Thinksource, we redefine recruitment efficiency. Our Manpower RPO services are designed to
+                seamlessly manage your hiring process, ensuring you focus on core business objectives while we
+                source and place the best talent.</p>
+            <div class="container col-sm-10 content">
+                <h3 class="sub_heading">What We Offer:</h3>
+                <ul>
+                    <li>Comprehensive end-to-end recruitment management.
+                    </li>
+                    <li> Access to a global talent pool for diverse roles.
+                    </li>
+                    <li>
+                        Expert screening and evaluation to match your unique needs.
+                    </li>
+                    <li>
+                        Scalable solutions for businesses of all sizes.
+                    </li>
+                </ul>
+
+                <h3 class="sub_heading">Why Choose Our RPO Services?
+                </h3>
+                <ul>
+                    <li>Reduce time-to-hire with our streamlined process.
+                    </li>
+                    <li> Leverage cutting-edge recruitment technologies and expertise.
+                    </li>
+                    <li>
+                        Focus on your strategic goals while we handle the talent pipeline.
+                    </li>
+                </ul>
+
+                <h3 class="sub_heading">CTA:
+                </h3>
+                <p>*"Discover how we can accelerate your hiring process. Contact us today!"*
+                </p>
+            </div>
+        </div>
+
+
+        <div class="row services_details" *ngIf="services_list[1].status">
+            <h1> BPO Solutions</h1>
+            <p>Streamline your operations and enhance efficiency with Thinksource’s Business Process Outsourcing (BPO) solutions. From customer support to back-office management, we provide tailored services to meet your business needs.
+            </p>
+            <div class="container col-sm-10 content">
+                <h3 class="sub_heading">Our Core BPO Services:  
+                </h3>
+                <ul>
+                    <li><strong>Customer Support:</strong> Round-the-clock service to enhance customer satisfaction.</li>
+                    <li><strong>Data Management:</strong> Accurate and efficient data processing for smarter decisions.</li>
+                    <li><strong>Finance and Accounting:</strong> Cost-effective solutions for financial processes.</li>
+                    <li><strong>IT Support:</strong> On-demand tech assistance to maintain your operational flow.</li>
+                  </ul>
+                  
+
+                <h3 class="sub_heading">Why Thinksource for BPO?  
+                </h3>
+                <ul>
+                    <li>Dedicated and trained professionals to handle your processes.  
+                    </li>
+                    <li>Cost-effective and scalable services.
+                    </li>
+                    <li>
+                        Focus on innovation and quality to drive results.
+                    </li>
+                </ul>
+
+                <h3 class="sub_heading">CTA:
+                </h3>
+                <p>*"Let us handle your operations while you focus on growth. Reach out now!"*
+                </p>
+            </div>
+        </div>
+
+        <div class="row services_details" *ngIf="services_list[2].status">
+            <h1> HR Services  
+            </h1>
+            <p>Thinksource provides comprehensive HR solutions that help you build and sustain a productive workforce. From payroll management to compliance support, we handle every aspect of HR so you can focus on business innovation.
+            </p>
+            <div class="container col-sm-10 content">
+                <h3 class="sub_heading">Key HR Offerings:  
+                </h3>
+                <ul>
+                    <li><strong>Payroll and Benefits Administration:</strong> Simplified and accurate payroll services.</li>
+                    <li><strong>Employee Onboarding:</strong> Seamless processes for bringing new talent onboard.</li>
+                    <li><strong>Compliance Management:</strong> Ensure adherence to labor laws and regulations.</li>
+                    <li><strong>Training and Development:</strong> Equip your team with skills for the future.</li>
+                  </ul>
+
+                <h3 class="sub_heading">Why Partner with Us?  
+                </h3>
+                <ul>
+                    <li>Customised HR strategies for your business.</li>
+                    <li>Proactive compliance and risk management.  </li>
+                    <li>Focused on fostering a positive employee experience.
+                    </li>
+                  </ul>
+                  
+                <h3 class="sub_heading">CTA:
+                </h3>
+                <p>*"Optimise your HR management with Thinksource. Get started today!"*
+
+                </p>
+            </div>
+        </div>
+    </div>
+</div><br><br>
+<app-footer></app-footer>
