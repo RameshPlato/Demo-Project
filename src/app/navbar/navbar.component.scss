@@ -1,27 +1,16 @@
-/* Adjust logo size */
-.navbar-brand  {
-    height: 40px;
-    color: white;
-  }
-  .navbar{
-    background-color: transparent;
-  }
-  /* Optional: Adjust the margin for navbar items */
-  .navbar-nav .nav-item {
-    margin-left: 20px;
-  }
-  
-  .navbar-nav .nav-link {
-    color: white !important;
-  }
-  .nav-item{
-    cursor: pointer;
-  }
-  
-  /* Responsive navbar */
-  @media (max-width: 768px) {
-    .navbar-nav {
-      text-align: center;
-    }
-  }
-  
+/* Adjust the toggle button to match your theme */
+.navbar-toggler {
+  border-color: white;
+}
+
+.nav-item {
+  font-size: 18px;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(255,255,255,1)' stroke-width='2' stroke-linecap='round' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+.navbar-nav .nav-link {
+  color: white !important;
+}

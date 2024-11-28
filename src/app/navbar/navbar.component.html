@@ -1,34 +1,42 @@
 <nav class="navbar navbar-expand-lg">
-    <div class="container-fluid">
-      <!-- Left-side image -->
-      <a class="navbar-brand" href="#">
-        <!-- <h1>THINK SOURCE</h1> -->
-        <img src="https://achevers-file-manager.s3.ap-south-1.amazonaws.com/uploads/think_source_logo.png" alt="">
-        <!-- <img src="assets/logo.png" alt="Logo" class="logo" style="height: 40px;" /> -->
-      </a>
-      
-      <!-- Toggle button for mobile view -->
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-  
-      <!-- Right-side navigation links -->
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link" (click)="getService(1)" >Services</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="**">Career</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="">Blog</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="">Contact</a>
-          </li>
-        </ul>
-      </div>
+  <div class="container-fluid">
+    <!-- Left-side image -->
+    <a class="navbar-brand" href="#">
+      <img src="https://achevers-file-manager.s3.ap-south-1.amazonaws.com/uploads/think_source_logo.png" alt="Logo" />
+    </a>
+
+    <!-- Toggle button for mobile view -->
+    <button
+  class="navbar-toggler"
+  type="button"
+  (click)="isNavbarCollapsed = !isNavbarCollapsed"
+  [attr.aria-controls]="'navbarNav'"
+  [attr.aria-expanded]="!isNavbarCollapsed"
+  aria-label="Toggle navigation"
+>
+  <span class="navbar-toggler-icon"></span>
+</button>
+
+    <!-- Right-side navigation links -->
+    <div
+      class="collapse navbar-collapse"
+      [ngClass]="{ show: !isNavbarCollapsed }"
+      id="navbarNav"
+    >
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" (click)="getService(1)">Services</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="**">Career</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="">Blog</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="">Contact</a>
+        </li>
+      </ul>
     </div>
-  </nav>
-  
+  </div>
+</nav>

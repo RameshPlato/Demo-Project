@@ -1,6 +1,7 @@
 import {
   AfterViewInit,
   Component,
+  HostListener,
   Inject,
   OnInit,
   PLATFORM_ID,
@@ -121,10 +122,10 @@ export class HomeComponent implements OnInit, AfterViewInit {
   ];
 
   customers_types = [
-    {id:1,name:"Automation & Robotics"},
-    {id:2,name:"Pharma"},
-    {id:1,name:"eCTD"},
-    {id:2,name:"HealthCare"},
+    {id:1,name:"Automation & Robotics", class:"col-sm-3"},
+    {id:2,name:"Pharma",class:"col-sm-2"},
+    {id:1,name:"eCTD",class:"col-sm-1"},
+    {id:2,name:"HealthCare",class:"col-sm-2"},
   ]
 
   customers_list = [
@@ -139,6 +140,8 @@ export class HomeComponent implements OnInit, AfterViewInit {
   ]
 
   happy_customers_list: { id: number; image: string }[] = [];
+  columnClass: string = 'col-lg-2';
+
 
   constructor(
     @Inject(PLATFORM_ID) private platformId: Object,
@@ -146,6 +149,9 @@ export class HomeComponent implements OnInit, AfterViewInit {
   ) {}
 
   ngOnInit(): void {
+    if (isPlatformBrowser(this.platformId)) {
+      this.setResponsiveClass(); // Set initial class only in the browser
+    }
     Chart.register(
       LinearScale,
       CategoryScale,
@@ -160,7 +166,28 @@ export class HomeComponent implements OnInit, AfterViewInit {
     );
     this.getCustomers(1)
   }
+  @HostListener('window:resize', ['$event'])
+  onResize() {
+    if (isPlatformBrowser(this.platformId)) {
+      this.setResponsiveClass(); // Adjust the class only in the browser
+    }
+  }
 
+  setResponsiveClass() {
+    if (isPlatformBrowser(this.platformId)) {
+      const screenWidth = window.innerWidth;
+
+      if (screenWidth < 576) {
+        this.columnClass = 'col-sm-12'; // Mobile view
+      } else if (screenWidth >= 576 && screenWidth < 992) {
+        this.columnClass = 'col-sm-6'; // Tablet view
+      } else if (screenWidth >= 992) {
+        this.columnClass = 'col-sm-2'; // Laptop view
+      }
+
+      console.log('screenWidth',screenWidth,this.columnClass)
+    }
+  }
   getService(service:any){
      this.router.navigate([`service/${service.id}`])
   }

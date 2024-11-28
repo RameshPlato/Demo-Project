@@ -5,17 +5,14 @@
 
         <div id="carouselExample" class="carousel slide" data-bs-ride="carousel" #carousel>
             <div class="container carousel-inner">
-                <!-- Carousel Item 1 -->
                 <div class=" container carousel-item active">
                     <div class="d-flex flex-column flex-lg-row">
-                        <!-- Left-side Content -->
                         <div class="carousel-content col-12 col-lg-6 p-4">
                             <h1>Accelerate Your Workforce with Thinksource</h1>
                             <p>Specialising in staffing and recruitment, we deliver top-tier talent across multiple
                                 technologies. From Java Full Stack to DevOps, and beyond, our bench candidates are ready
                                 to meet your business needs—immediately.</p>
                         </div>
-                        <!-- Right-side Image -->
                         <div class="carousel-image col-12 col-lg-6">
                             <img src="https://achevers-file-manager.s3.ap-south-1.amazonaws.com/uploads/ai-removebg-preview.png"
                                 class="d-block w-50" alt="Image 1">
@@ -23,17 +20,13 @@
                     </div>
                 </div>
 
-                <!-- Carousel Item 2 -->
                 <div class="carousel-item">
                     <div class="d-flex flex-column flex-lg-row">
-                        <!-- Left-side Content -->
                         <div class="carousel-content col-12 col-lg-6 p-4">
                             <h1>Your Partner in End-to-End Talent Solutions</h1>
                             <p>Experience seamless hiring with our tailored Manpower RPO, BPO, and HR services.
                                 Thinksource simplifies recruitment while ensuring quality and speed.</p>
-                            <!-- <a href="#" class="btn btn-primary">Learn More</a> -->
                         </div>
-                        <!-- Right-side Image -->
                         <div class="carousel-image col-12 col-lg-6">
                             <img src="https://achevers-file-manager.s3.ap-south-1.amazonaws.com/uploads/ai-removebg-preview.png"
                                 class="d-block w-50" alt="Image 2">
@@ -41,17 +34,14 @@
                     </div>
                 </div>
 
-                <!-- Carousel Item 3 -->
                 <div class="carousel-item">
                     <div class="d-flex flex-column flex-lg-row">
-                        <!-- Left-side Content -->
                         <div class="carousel-content col-12 col-lg-6 p-4">
                             <h1>Bench Strength That Powers Your Success</h1>
                             <p>Our competitive edge? A pre-vetted talent pool across key technologies like Python,
                                 Mulesoft, Azure & AWS, Android, and iOS. Empower your projects with skilled
                                 professionals on demand.</p>
                         </div>
-                        <!-- Right-side Image -->
                         <div class="carousel-image col-12 col-lg-6">
                             <img src="https://achevers-file-manager.s3.ap-south-1.amazonaws.com/uploads/ai-removebg-preview.png"
                                 class="d-block w-50" alt="Image 3">
@@ -60,7 +50,6 @@
                 </div>
             </div>
 
-            <!-- Carousel Controls -->
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Previous</span>
@@ -87,10 +76,22 @@
             <div class="sub_heading">
                 <h3>Market Search</h3>
                 <h2>Talent Market</h2> <br><br>
-                <span class="talent_btn">by Experience</span>
-                <span class="talent_btn">by Technology</span>
-                <span class="talent_btn">by Location</span>
-                <span class="talent_btn">by Role</span>
+                <div class="row">
+                    <div class="col-sm-2"></div>
+                    <div class="col-sm-2">
+                        <div class="talent_btn">by Experience</div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="talent_btn">by Technology</div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="talent_btn">by Location</div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="talent_btn">by Role</div>
+                    </div>
+                    <div class="col-sm-2"></div>
+                </div>
             </div>
             <br><br>
             <div class="map">
@@ -158,39 +159,53 @@
             <div class="container">
                 <div id="techCarousel" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner">
-                        <!-- First Slide -->
-                        <div class="carousel-item active">
-                            <div class="row">
-                                <div class="col-sm-2 skills" *ngFor="let skill of skills_list" (click)="getSkillDetails(skill.id)">
-                                    <img [src]="skill.image" alt="{{ skill.name }}" />
-                                    <h4>{{ skill.name }}</h4>
-                                </div>
-                            </div>
+                      <!-- First Slide -->
+                      <div class="carousel-item active">
+                        <div class="row">
+                          <div
+                            class="skills"
+                            *ngFor="let skill of skills_list"
+                            (click)="getSkillDetails(skill.id)"
+                          >
+                            <img [src]="skill.image" alt="{{ skill.name }}" />
+                            <h4>{{ skill.name }}</h4>
+                          </div>
                         </div>
-
-                        <!-- Second Slide -->
-                        <div class="carousel-item">
-                            <div class="row">
-                                <div class="col-sm-2 skills" *ngFor="let skill of skills_list" (click)="getSkillDetails(skill.id)">
-                                    <img [src]="skill.image" alt="{{ skill.name }}" />
-                                    <h4>{{ skill.name }}</h4>
-                                </div>
-                            </div>
+                      </div>
+                  
+                      <!-- Second Slide -->
+                      <div class="carousel-item">
+                        <div class="row">
+                          <div
+                            
+                            class="col-sm-2 skills"
+                            *ngFor="let skill of skills_list"
+                            (click)="getSkillDetails(skill.id)"
+                          >
+                            <img [src]="skill.image" alt="{{ skill.name }}" />
+                            <h4>{{ skill.name }}</h4>
+                          </div>
                         </div>
+                      </div>
                     </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#techCarousel"
-                        data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <!-- <span class="visually-hidden">Previous</span> -->
+                    <button
+                      class="carousel-control-prev"
+                      type="button"
+                      data-bs-target="#techCarousel"
+                      data-bs-slide="prev"
+                    >
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#techCarousel"
-                        data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <!-- <span class="visually-hidden">Next</span> -->
+                    <button
+                      class="carousel-control-next"
+                      type="button"
+                      data-bs-target="#techCarousel"
+                      data-bs-slide="next"
+                    >
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     </button>
-
-
-                </div>
+                  </div>
+                  
                 <!-- <div class="row">
                     <div class="col-sm-2 skills" *ngFor="let skill of skills_list" (click)="getSkillDetails(skill.id)">
                         <img [src]="skill.image" alt="{{ skill.name }}" />
@@ -209,8 +224,7 @@
                 <h3>Our Skills Speak</h3>
                 <h2>Blogs</h2>
             </div>
-
-            <div class="map" style="margin-top: -50px;">
+            <div class="blogs_map" >
                 <div id="cardCarousel" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner">
                         <!-- First Slide -->
@@ -272,13 +286,19 @@
                 <div class="sub_heading">
                     <h3>Clients by Industry</h3>
                     <h2>Our Happy Customers</h2> <br><br>
-                    <span class="talent_btn" *ngFor="let cus of customers_types"
-                        (click)="getCustomers(cus.id)">{{cus.name}}</span>
+                    <div class="row">
+                       <div class="col-sm-2"></div>
+                       <div  *ngFor="let cus of customers_types" (click)="getCustomers(cus.id)" [class]="cus.class">
+                        <div class="talent_btn">{{cus.name}}</div>
+                       </div>
+                       <div class="col-sm-2"></div>
+                    </div>
+                   
                 </div>
                 <br><br>
 
                 <div class="row">
-                    <div class="col-sm-3" *ngFor="let cus of happy_customers_list">
+                    <div class="col-sm-3" *ngFor="let cus of happy_customers_list"  class="customers_img">
                         <img [src]="cus.image" alt="">
                     </div>
                 </div>

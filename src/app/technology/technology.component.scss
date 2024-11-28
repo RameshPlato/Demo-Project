@@ -1,8 +1,18 @@
 
-.service_tagline{
-    color: white;
-    font-size: 50px;
-    // text-align: center;
+@media (max-width: 576px) {
+    .service_tagline{
+        color: white;
+        font-size: 25px;
+    }
+}
+@media (min-width: 992px) {
+    .service_tagline{
+        color: white;
+        font-size: 50px;
+    }
+}
+.services{
+  overflow-x: hidden;
 }
 .serv{
     background: linear-gradient(to right, #7f015b, #0B0140);
