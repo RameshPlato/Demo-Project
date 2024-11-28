@@ -163,7 +163,7 @@
                       <div class="carousel-item active">
                         <div class="row">
                           <div
-                            class="skills"
+                          class="col-sm-2 skills"
                             *ngFor="let skill of skills_list"
                             (click)="getSkillDetails(skill.id)"
                           >
@@ -177,7 +177,6 @@
                       <div class="carousel-item">
                         <div class="row">
                           <div
-                            
                             class="col-sm-2 skills"
                             *ngFor="let skill of skills_list"
                             (click)="getSkillDetails(skill.id)"
@@ -298,7 +297,7 @@
                 <br><br>
 
                 <div class="row">
-                    <div class="col-sm-3" *ngFor="let cus of happy_customers_list"  class="customers_img">
+                    <div class="col-sm-3 customers_img" *ngFor="let cus of happy_customers_list" >
                         <img [src]="cus.image" alt="">
                     </div>
                 </div>
