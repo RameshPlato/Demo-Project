@@ -1,22 +1,7 @@
 
-@media (max-width: 576px) {
-    .service_tagline{
-        color: white;
-        font-size: 25px;
-    }
-}
-@media (min-width: 992px) {
-    .service_tagline{
-        color: white;
-        font-size: 50px;
-    }
-}
-.services{
-  overflow-x: hidden;
-}
-.serv{
-    background: linear-gradient(to right, #7f015b, #0B0140);
-}
+// .serv{
+//       background-color: #27635e; 
+// }
 .service_tagline_content{
     color: white;
     font-size: 20px;
@@ -29,7 +14,7 @@
 .service_item{
     color: white;
     font-size: 20px;
-    background-color: #6A014C;
+    background-color: #2e7570;
     text-align: center;
     padding: 10px;
     cursor: pointer;

@@ -1,0 +1,220 @@
+<app-navbar></app-navbar>
+<div class="services">
+    <div class="serv">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 align-items-center justify-content-center" style="margin-top: 150px;">
+                <h1 class="service_tagline">Why Choose Us?</h1><br>
+                <!-- <p class="service_tagline_content">
+                    Unlock unparalleled success with our comprehensive Recruitment Process Outsourcing (RPO), Business Process
+                    Outsourcing (BPO), and Human Resources (HR) services. We provide end-to-end workforce solutions that enhance
+                    talent acquisition, improve process efficiency, and drive sustainable business growth. Our tailored strategies
+                    ensure you have access to the right talent at the right time, while our operational expertise streamlines
+                    back-office processes. By partnering with us, your organization gains a scalable, flexible, and results-driven
+                    approach, empowering you to focus on innovation, growth, and achieving long-term competitive advantage.
+                </p> -->
+            </div>
+            <div class="col-sm-6 d-flex align-items-center justify-content-center">
+                <img src="../../assets/bannerimg/TalentSolutions.png"
+                    class="tag_image" alt="">
+            </div>
+        </div> <br><br>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 specialties" *ngFor="let item of our_specialties">
+             <h1><span>{{item.icon}}</span>&nbsp;<span>{{item.title}}</span></h1>
+             <p>{{item.description}}</p>
+        </div>
+    </div>
+</div>
+<br><br>
+<div class="container">
+    <div class="market_search">
+        <div class="sub_heading">
+            <h3>Hear from Our Clients</h3>
+            <h2>Testimonials</h2>
+        </div>
+        <div class="blogs_map">
+            <div id="cardCarousel" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    <!-- First Slide -->
+                    <div class="carousel-item active tech-carousel-item">
+                        <div class="row">
+                            <div class="col-sm-4" *ngFor="let blog of blogs">
+                                <div class="blog_card">
+                                    <img [src]="blog.image" alt="Card Image" class="card-img">
+                                    <div class="card-body">
+                                        <h3 class="card-text">{{blog.content}}</h3>
+                                        <p class="card-title">{{blog.title}}</p>
+                                        <span>{{blog.time}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Second Slide -->
+                    <div class="carousel-item tech-carousel-item">
+                        <div class="row">
+                            <div class="col-sm-4" *ngFor="let blog of blogs">
+                                <div class=" blog_card">
+                                    <img [src]="blog.image" alt="Card Image" class="card-img">
+                                    <div class="card-body">
+                                        <h3 class="card-text">{{blog.content}}</h3>
+                                        <p class="card-title">{{blog.title}}</p>
+                                        <span>{{blog.time}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#cardCarousel"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#cardCarousel"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+
+
+            </div>
+
+        </div>
+    </div>
+
+</div>
+<br><br>
+    <!-- <div class="row ">
+        <div class="col-sm-3 service_item" *ngFor="let item of services_list"  (click)="loadService(item.id)"
+        [style.background-color]="item.status ? '#20504d':''">
+            {{item.title}}
+        </div>
+    </div> -->
+    <br><br>
+    <!-- <div class="container">
+        <div class="row services_details" *ngIf="services_list[0].status">
+            <h1>Workforce Consulting</h1>
+            <p>Our Manpower RPO services provide a comprehensive solution for managing the entire recruitment lifecycle. We help
+                organizations streamline their hiring process by sourcing, screening, interviewing, and onboarding top talent
+                efficiently.</p>
+                <div class="container col-sm-10 content">
+                    <h3 class="sub_heading">What We Offer:</h3>
+                    <ul>
+                        <li><strong>Tailored Recruitment Strategies:</strong> Customized solutions aligned with your business goals.</li>
+                        <li><strong>Access to Top Talent:</strong> Leverage our extensive talent network.</li>
+                        <li><strong>Speed and Efficiency:</strong> Rapid fulfilment of roles to minimize downtime.</li>
+                        <li><strong>Quality Assurance:</strong> Subject Matter Experts ensure candidates meet job-specific criteria.</li>
+                        <li><strong>Scalable Solutions:</strong> Flexible services that grow with your business needs.</li>
+                    </ul>
+                
+                    <h3 class="sub_heading">Why Choose Our RPO Services?</h3>
+                    <ul>
+                        <li><strong>Customized Solutions:</strong> We tailor recruitment strategies to meet your unique business needs.</li>
+                        <li><strong>Faster Hiring:</strong> Our agile processes ensure quick placement of top talent, reducing time-to-fill.</li>
+                        <li><strong>Access to Expertise:</strong> Benefit from industry-leading recruiters and Subject Matter Experts who ensure quality hires.</li>
+                        <li><strong>Cost Efficiency:</strong> Optimize recruitment costs with scalable, data-driven solutions.</li>
+                        <li><strong>Focus on Core Business:</strong> Let us handle the complexities of hiring so you can concentrate on strategic priorities.</li>
+                    </ul>
+                
+                    <h3 class="sub_heading">Ready to Optimize Your Hiring?</h3>
+                    <p>Partner with us for agile, efficient, and scalable RPO solutions. Let’s accelerate your workforce strategy today!</p>
+                    <p><strong>Contact Us Now</strong> to explore how we can transform your talent acquisition process.</p>
+                </div>
+                
+        </div>
+        <div class="row services_details" *ngIf="services_list[1].status">
+            <h1>IT Career Training</h1>
+            <p>
+                Our Business Process Outsourcing (BPO) services are designed to enhance operational efficiency, reduce costs, and improve service delivery. We manage key back-office and customer-facing processes, allowing you to focus on core business priorities.
+            </p>
+            <div class="container col-sm-10 content">
+                <h3 class="sub_heading">What We Offer:</h3>
+                <ul>
+                    <li><strong>End-to-End Process Management:</strong> From customer support to administrative functions.</li>
+                    <li><strong>Customized Solutions:</strong> Tailored to meet your specific business needs.</li>
+                    <li><strong>Enhanced Efficiency:</strong> Streamline workflows with advanced technology.</li>
+                    <li><strong>Scalable Support:</strong> Services that grow with your business demands.</li>
+                </ul>
+                <p><strong>Contact Us</strong> to learn how our BPO solutions can drive your success.</p>
+            
+                <h3 class="sub_heading">Why Choose Us?</h3>
+                <ul>
+                    <li><strong>Customized Solutions:</strong> We tailor RPO and BPO services to align with your business goals.</li>
+                    <li><strong>Proven Expertise:</strong> Our team of seasoned professionals ensures top-quality talent and process management.</li>
+                    <li><strong>Speed and Efficiency:</strong> We deliver rapid, high-quality results that minimize downtime and optimize operations.</li>
+                    <li><strong>Cost Savings:</strong> Our scalable, data-driven solutions reduce recruitment and operational costs.</li>
+                    <li><strong>Long-Term Partnership:</strong> We are committed to supporting your growth with agile, flexible services.</li>
+                </ul>
+                <p><strong>Contact Us Today</strong> to experience world-class workforce solutions!</p>
+            </div>
+            
+        </div>
+        <div class="row services_details" *ngIf="services_list[2].status">
+            <h1>Staffing Solutions  
+            </h1>
+            <p>
+                Our HR services streamline workforce management, ensuring compliance, employee engagement, and strategic alignment. We provide customized solutions to support every aspect of HR, from talent acquisition to performance management.
+            </p>
+            <div class="container col-sm-10 content">
+                <h3 class="sub_heading">Our Offerings:</h3>
+                <ul>
+                    <li><strong>Talent Acquisition & Onboarding:</strong> Efficient sourcing and seamless onboarding processes.</li>
+                    <li><strong>Employee Relations:</strong> Ensure a positive work environment and effective conflict resolution.</li>
+                    <li><strong>Compliance & Payroll Management:</strong> Maintain regulatory compliance and accurate payroll processing.</li>
+                    <li><strong>Performance Management:</strong> Foster growth with tailored employee development programs.</li>
+                </ul>
+            
+                <h3 class="sub_heading">Why Choose Us for HR Services?</h3>
+                <ul>
+                    <li><strong>Tailored Solutions:</strong> Custom HR strategies designed to fit your organization's unique needs.</li>
+                    <li><strong>Expertise:</strong> Skilled professionals with deep industry knowledge to manage all aspects of HR.</li>
+                    <li><strong>Efficiency:</strong> Streamlined processes that enhance employee satisfaction and business productivity.</li>
+                    <li><strong>Scalable Services:</strong> Flexible HR solutions that grow with your business.</li>
+                    <li><strong>Compliance Focus:</strong> Ensuring adherence to legal and regulatory requirements with minimal risk.</li>
+                </ul>
+            
+                <h3 class="sub_heading">Ready to Optimize Your HR Functions?</h3>
+                <p>Partner with us for tailored, efficient HR solutions that align with your business goals. Let us help you enhance employee engagement, ensure compliance, and streamline your HR processes.</p>
+                <p><strong>Contact Us Today</strong> to explore how our HR services can elevate your organization!</p>
+            </div>
+            
+        </div>
+        <div class="row services_details" *ngIf="services_list[3].status">
+            <h1>Resume and Career Coaching</h1>
+            <p>Our Manpower RPO services provide a comprehensive solution for managing the entire recruitment lifecycle. We help
+                organizations streamline their hiring process by sourcing, screening, interviewing, and onboarding top talent
+                efficiently.</p>
+                <div class="container col-sm-10 content">
+                    <h3 class="sub_heading">What We Offer:</h3>
+                    <ul>
+                        <li><strong>Tailored Recruitment Strategies:</strong> Customized solutions aligned with your business goals.</li>
+                        <li><strong>Access to Top Talent:</strong> Leverage our extensive talent network.</li>
+                        <li><strong>Speed and Efficiency:</strong> Rapid fulfilment of roles to minimize downtime.</li>
+                        <li><strong>Quality Assurance:</strong> Subject Matter Experts ensure candidates meet job-specific criteria.</li>
+                        <li><strong>Scalable Solutions:</strong> Flexible services that grow with your business needs.</li>
+                    </ul>
+                
+                    <h3 class="sub_heading">Why Choose Our RPO Services?</h3>
+                    <ul>
+                        <li><strong>Customized Solutions:</strong> We tailor recruitment strategies to meet your unique business needs.</li>
+                        <li><strong>Faster Hiring:</strong> Our agile processes ensure quick placement of top talent, reducing time-to-fill.</li>
+                        <li><strong>Access to Expertise:</strong> Benefit from industry-leading recruiters and Subject Matter Experts who ensure quality hires.</li>
+                        <li><strong>Cost Efficiency:</strong> Optimize recruitment costs with scalable, data-driven solutions.</li>
+                        <li><strong>Focus on Core Business:</strong> Let us handle the complexities of hiring so you can concentrate on strategic priorities.</li>
+                    </ul>
+                
+                    <h3 class="sub_heading">Ready to Optimize Your Hiring?</h3>
+                    <p>Partner with us for agile, efficient, and scalable RPO solutions. Let’s accelerate your workforce strategy today!</p>
+                    <p><strong>Contact Us Now</strong> to explore how we can transform your talent acquisition process.</p>
+                </div>
+                
+        </div>
+    </div> -->
+</div><br><br>
+<app-footer></app-footer>

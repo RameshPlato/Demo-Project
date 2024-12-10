@@ -1,130 +1,150 @@
 <app-navbar></app-navbar>
 <div class="services">
+    <div class="serv">
     <div class="container">
         <div class="row">
             <div class="col-sm-6 align-items-center justify-content-center" style="margin-top: 150px;">
-                <h1 class="service_tagline">Services Overview Section</h1><br>
-                <!-- <p class="service_tagline_content">At Thinksource, we bring a competitive edge to your business by providing pre-vetted, highly skilled professionals in a wide range of cutting-edge technologies. Our bench strength ensures you get the right talent, ready to onboard, without delays.
-                </p> -->
+                <h1 class="service_tagline">Empowering Your Business with World-Class Solutions</h1><br>
+                <p class="service_tagline_content">
+                    Unlock unparalleled success with our comprehensive Recruitment Process Outsourcing (RPO), Business Process
+                    Outsourcing (BPO), and Human Resources (HR) services. We provide end-to-end workforce solutions that enhance
+                    talent acquisition, improve process efficiency, and drive sustainable business growth. Our tailored strategies
+                    ensure you have access to the right talent at the right time, while our operational expertise streamlines
+                    back-office processes. By partnering with us, your organization gains a scalable, flexible, and results-driven
+                    approach, empowering you to focus on innovation, growth, and achieving long-term competitive advantage.
+                </p>
             </div>
             <div class="col-sm-6 d-flex align-items-center justify-content-center">
-                <img src="https://png.pngtree.com/png-vector/20240427/ourmid/pngtree-a-man-work-in-office-png-image_12329854.png"
+                <img src="../../assets/bannerimg/TalentSolutions.png"
                     class="tag_image" alt="">
             </div>
         </div> <br><br>
     </div>
+</div>
     <div class="row ">
-        <div class="col-sm-4 service_item" *ngFor="let item of services_list"  (click)="loadService(item.id)"
-        [style.background-color]="item.status ? '#360227':''">
+        <div class="col-sm-3 service_item" *ngFor="let item of services_list"  (click)="loadService(item.id)"
+        [style.background-color]="item.status ? '#20504d':''">
             {{item.title}}
         </div>
     </div>
     <br><br>
     <div class="container">
         <div class="row services_details" *ngIf="services_list[0].status">
-            <h1>Manpower RPO (Recruitment Process Outsourcing) </h1>
-            <p>At Thinksource, we redefine recruitment efficiency. Our Manpower RPO services are designed to
-                seamlessly manage your hiring process, ensuring you focus on core business objectives while we
-                source and place the best talent.</p>
+            <h1>Workforce Consulting</h1>
+            <p>Our Manpower RPO services provide a comprehensive solution for managing the entire recruitment lifecycle. We help
+                organizations streamline their hiring process by sourcing, screening, interviewing, and onboarding top talent
+                efficiently.</p>
+                <div class="container col-sm-10 content">
+                    <h3 class="sub_heading">What We Offer:</h3>
+                    <ul>
+                        <li><strong>Tailored Recruitment Strategies:</strong> Customized solutions aligned with your business goals.</li>
+                        <li><strong>Access to Top Talent:</strong> Leverage our extensive talent network.</li>
+                        <li><strong>Speed and Efficiency:</strong> Rapid fulfilment of roles to minimize downtime.</li>
+                        <li><strong>Quality Assurance:</strong> Subject Matter Experts ensure candidates meet job-specific criteria.</li>
+                        <li><strong>Scalable Solutions:</strong> Flexible services that grow with your business needs.</li>
+                    </ul>
+                
+                    <h3 class="sub_heading">Why Choose Our RPO Services?</h3>
+                    <ul>
+                        <li><strong>Customized Solutions:</strong> We tailor recruitment strategies to meet your unique business needs.</li>
+                        <li><strong>Faster Hiring:</strong> Our agile processes ensure quick placement of top talent, reducing time-to-fill.</li>
+                        <li><strong>Access to Expertise:</strong> Benefit from industry-leading recruiters and Subject Matter Experts who ensure quality hires.</li>
+                        <li><strong>Cost Efficiency:</strong> Optimize recruitment costs with scalable, data-driven solutions.</li>
+                        <li><strong>Focus on Core Business:</strong> Let us handle the complexities of hiring so you can concentrate on strategic priorities.</li>
+                    </ul>
+                
+                    <h3 class="sub_heading">Ready to Optimize Your Hiring?</h3>
+                    <p>Partner with us for agile, efficient, and scalable RPO solutions. Let’s accelerate your workforce strategy today!</p>
+                    <p><strong>Contact Us Now</strong> to explore how we can transform your talent acquisition process.</p>
+                </div>
+                
+        </div>
+        <div class="row services_details" *ngIf="services_list[1].status">
+            <h1>IT Career Training</h1>
+            <p>
+                Our Business Process Outsourcing (BPO) services are designed to enhance operational efficiency, reduce costs, and improve service delivery. We manage key back-office and customer-facing processes, allowing you to focus on core business priorities.
+            </p>
             <div class="container col-sm-10 content">
                 <h3 class="sub_heading">What We Offer:</h3>
                 <ul>
-                    <li>Comprehensive end-to-end recruitment management.
-                    </li>
-                    <li> Access to a global talent pool for diverse roles.
-                    </li>
-                    <li>
-                        Expert screening and evaluation to match your unique needs.
-                    </li>
-                    <li>
-                        Scalable solutions for businesses of all sizes.
-                    </li>
+                    <li><strong>End-to-End Process Management:</strong> From customer support to administrative functions.</li>
+                    <li><strong>Customized Solutions:</strong> Tailored to meet your specific business needs.</li>
+                    <li><strong>Enhanced Efficiency:</strong> Streamline workflows with advanced technology.</li>
+                    <li><strong>Scalable Support:</strong> Services that grow with your business demands.</li>
                 </ul>
-
-                <h3 class="sub_heading">Why Choose Our RPO Services?
-                </h3>
+                <p><strong>Contact Us</strong> to learn how our BPO solutions can drive your success.</p>
+            
+                <h3 class="sub_heading">Why Choose Us?</h3>
                 <ul>
-                    <li>Reduce time-to-hire with our streamlined process.
-                    </li>
-                    <li> Leverage cutting-edge recruitment technologies and expertise.
-                    </li>
-                    <li>
-                        Focus on your strategic goals while we handle the talent pipeline.
-                    </li>
+                    <li><strong>Customized Solutions:</strong> We tailor RPO and BPO services to align with your business goals.</li>
+                    <li><strong>Proven Expertise:</strong> Our team of seasoned professionals ensures top-quality talent and process management.</li>
+                    <li><strong>Speed and Efficiency:</strong> We deliver rapid, high-quality results that minimize downtime and optimize operations.</li>
+                    <li><strong>Cost Savings:</strong> Our scalable, data-driven solutions reduce recruitment and operational costs.</li>
+                    <li><strong>Long-Term Partnership:</strong> We are committed to supporting your growth with agile, flexible services.</li>
                 </ul>
-
-                <h3 class="sub_heading">CTA:
-                </h3>
-                <p>*"Discover how we can accelerate your hiring process. Contact us today!"*
-                </p>
+                <p><strong>Contact Us Today</strong> to experience world-class workforce solutions!</p>
             </div>
+            
         </div>
-
-
-        <div class="row services_details" *ngIf="services_list[1].status">
-            <h1> BPO Solutions</h1>
-            <p>Streamline your operations and enhance efficiency with Thinksource’s Business Process Outsourcing (BPO) solutions. From customer support to back-office management, we provide tailored services to meet your business needs.
-            </p>
-            <div class="container col-sm-10 content">
-                <h3 class="sub_heading">Our Core BPO Services:  
-                </h3>
-                <ul>
-                    <li><strong>Customer Support:</strong> Round-the-clock service to enhance customer satisfaction.</li>
-                    <li><strong>Data Management:</strong> Accurate and efficient data processing for smarter decisions.</li>
-                    <li><strong>Finance and Accounting:</strong> Cost-effective solutions for financial processes.</li>
-                    <li><strong>IT Support:</strong> On-demand tech assistance to maintain your operational flow.</li>
-                  </ul>
-                  
-
-                <h3 class="sub_heading">Why Thinksource for BPO?  
-                </h3>
-                <ul>
-                    <li>Dedicated and trained professionals to handle your processes.  
-                    </li>
-                    <li>Cost-effective and scalable services.
-                    </li>
-                    <li>
-                        Focus on innovation and quality to drive results.
-                    </li>
-                </ul>
-
-                <h3 class="sub_heading">CTA:
-                </h3>
-                <p>*"Let us handle your operations while you focus on growth. Reach out now!"*
-                </p>
-            </div>
-        </div>
-
         <div class="row services_details" *ngIf="services_list[2].status">
-            <h1> HR Services  
+            <h1>Staffing Solutions  
             </h1>
-            <p>Thinksource provides comprehensive HR solutions that help you build and sustain a productive workforce. From payroll management to compliance support, we handle every aspect of HR so you can focus on business innovation.
+            <p>
+                Our HR services streamline workforce management, ensuring compliance, employee engagement, and strategic alignment. We provide customized solutions to support every aspect of HR, from talent acquisition to performance management.
             </p>
             <div class="container col-sm-10 content">
-                <h3 class="sub_heading">Key HR Offerings:  
-                </h3>
+                <h3 class="sub_heading">Our Offerings:</h3>
                 <ul>
-                    <li><strong>Payroll and Benefits Administration:</strong> Simplified and accurate payroll services.</li>
-                    <li><strong>Employee Onboarding:</strong> Seamless processes for bringing new talent onboard.</li>
-                    <li><strong>Compliance Management:</strong> Ensure adherence to labor laws and regulations.</li>
-                    <li><strong>Training and Development:</strong> Equip your team with skills for the future.</li>
-                  </ul>
-
-                <h3 class="sub_heading">Why Partner with Us?  
-                </h3>
+                    <li><strong>Talent Acquisition & Onboarding:</strong> Efficient sourcing and seamless onboarding processes.</li>
+                    <li><strong>Employee Relations:</strong> Ensure a positive work environment and effective conflict resolution.</li>
+                    <li><strong>Compliance & Payroll Management:</strong> Maintain regulatory compliance and accurate payroll processing.</li>
+                    <li><strong>Performance Management:</strong> Foster growth with tailored employee development programs.</li>
+                </ul>
+            
+                <h3 class="sub_heading">Why Choose Us for HR Services?</h3>
                 <ul>
-                    <li>Customised HR strategies for your business.</li>
-                    <li>Proactive compliance and risk management.  </li>
-                    <li>Focused on fostering a positive employee experience.
-                    </li>
-                  </ul>
-                  
-                <h3 class="sub_heading">CTA:
-                </h3>
-                <p>*"Optimise your HR management with Thinksource. Get started today!"*
-
-                </p>
+                    <li><strong>Tailored Solutions:</strong> Custom HR strategies designed to fit your organization's unique needs.</li>
+                    <li><strong>Expertise:</strong> Skilled professionals with deep industry knowledge to manage all aspects of HR.</li>
+                    <li><strong>Efficiency:</strong> Streamlined processes that enhance employee satisfaction and business productivity.</li>
+                    <li><strong>Scalable Services:</strong> Flexible HR solutions that grow with your business.</li>
+                    <li><strong>Compliance Focus:</strong> Ensuring adherence to legal and regulatory requirements with minimal risk.</li>
+                </ul>
+            
+                <h3 class="sub_heading">Ready to Optimize Your HR Functions?</h3>
+                <p>Partner with us for tailored, efficient HR solutions that align with your business goals. Let us help you enhance employee engagement, ensure compliance, and streamline your HR processes.</p>
+                <p><strong>Contact Us Today</strong> to explore how our HR services can elevate your organization!</p>
             </div>
+            
+        </div>
+        <div class="row services_details" *ngIf="services_list[3].status">
+            <h1>Resume and Career Coaching</h1>
+            <p>Our Manpower RPO services provide a comprehensive solution for managing the entire recruitment lifecycle. We help
+                organizations streamline their hiring process by sourcing, screening, interviewing, and onboarding top talent
+                efficiently.</p>
+                <div class="container col-sm-10 content">
+                    <h3 class="sub_heading">What We Offer:</h3>
+                    <ul>
+                        <li><strong>Tailored Recruitment Strategies:</strong> Customized solutions aligned with your business goals.</li>
+                        <li><strong>Access to Top Talent:</strong> Leverage our extensive talent network.</li>
+                        <li><strong>Speed and Efficiency:</strong> Rapid fulfilment of roles to minimize downtime.</li>
+                        <li><strong>Quality Assurance:</strong> Subject Matter Experts ensure candidates meet job-specific criteria.</li>
+                        <li><strong>Scalable Solutions:</strong> Flexible services that grow with your business needs.</li>
+                    </ul>
+                
+                    <h3 class="sub_heading">Why Choose Our RPO Services?</h3>
+                    <ul>
+                        <li><strong>Customized Solutions:</strong> We tailor recruitment strategies to meet your unique business needs.</li>
+                        <li><strong>Faster Hiring:</strong> Our agile processes ensure quick placement of top talent, reducing time-to-fill.</li>
+                        <li><strong>Access to Expertise:</strong> Benefit from industry-leading recruiters and Subject Matter Experts who ensure quality hires.</li>
+                        <li><strong>Cost Efficiency:</strong> Optimize recruitment costs with scalable, data-driven solutions.</li>
+                        <li><strong>Focus on Core Business:</strong> Let us handle the complexities of hiring so you can concentrate on strategic priorities.</li>
+                    </ul>
+                
+                    <h3 class="sub_heading">Ready to Optimize Your Hiring?</h3>
+                    <p>Partner with us for agile, efficient, and scalable RPO solutions. Let’s accelerate your workforce strategy today!</p>
+                    <p><strong>Contact Us Now</strong> to explore how we can transform your talent acquisition process.</p>
+                </div>
+                
         </div>
     </div>
 </div><br><br>

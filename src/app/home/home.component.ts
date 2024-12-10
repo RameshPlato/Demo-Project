@@ -3,6 +3,7 @@ import {
   Component,
   HostListener,
   Inject,
+  Input,
   OnInit,
   PLATFORM_ID,
   ViewChild,
@@ -25,37 +26,50 @@ import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { NavbarComponent } from '../navbar/navbar.component';
 import { FooterComponent } from "../footer/footer.component";
 import { Router } from '@angular/router';
+import { MaterialModule } from '../shared/material.module';
+import { FormsModule } from '@angular/forms';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [NavbarComponent, CommonModule, FooterComponent],
+  imports: [NavbarComponent, CommonModule, FooterComponent,MaterialModule,FormsModule],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit, AfterViewInit {
   chart: Chart | undefined;
+  
+
+
 
   services_list = [
     {
       id:1,
-      title: 'ManPower RPO',
-      image: 'https://achevers-file-manager.s3.ap-south-1.amazonaws.com/uploads/ai-removebg-preview.png',
-      description: 'Lorem ipsum dolor sit amet',
+      title: 'Workforce Consulting',
+      image: '../../assets/images/img_1.jpg',
+      description: 'Customized strategies to build resilient teams',
       link: '#'
     },
     {
       id:2,
-      title: 'BPO',
-      image: 'https://achevers-file-manager.s3.ap-south-1.amazonaws.com/uploads/ai-removebg-preview.png',
-      description: 'Lorem ipsum dolor sit amet',
+      title: 'IT Career Training',
+      image: '../../assets/images/img_2.jpg',
+      description: 'Comprehensive training for career advancement in tech.',
       link: '#'
     },
     {
       id:3,
-      title: 'HR Services',
-      image: 'https://achevers-file-manager.s3.ap-south-1.amazonaws.com/uploads/ai-removebg-preview.png',
-      description: 'Lorem ipsum dolor sit amet',
+      title: 'Staffing Solutions',
+      image: '../../assets/images/img_3.jpg',
+      description: 'Connecting top talent with the right opportunities.',
+      link: '#'
+    },
+    {
+      id:4,
+      title: 'Resume and Career Coaching',
+      image: '../../assets/images/img_1.jpg',
+      description: 'Guidance to craft standout professional profiles.',
       link: '#'
     }
   ];
@@ -63,32 +77,32 @@ export class HomeComponent implements OnInit, AfterViewInit {
   skills_list = [
     {
       id: 1,
-      image: 'https://static.vecteezy.com/system/resources/previews/048/332/150/non_2x/java-programming-language-java-logo-free-png.png',
+      image: '../../assets/icons/Java Fullstack.svg',
       name: 'Java Fullstack'
     },
     {
       id: 2,
-      image: 'https://marvel-b1-cdn.bc0a.com/f00000000236551/dt-cdn.net/wp-content/uploads/2021/07/13429_ILL_DevOpsLoop.png',
+      image: '../../assets/icons/DevOps.png',
       name: 'DevOps'
     },
     {
       id: 3,
-      image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNxwQ-HcqYWYmiAhAfrCni-OWbht4XRpIrHQ&s',
+      image: '../../assets/icons/Azure&AWS.png',
       name: 'Azure & AWS'
     },
     {
       id: 4,
-      image: 'https://techterms.com/img/lg/android_841.png',
+      image: '../../assets/icons/Android&IOS.png',
       name: 'Android & IOS'
     },
     {
       id: 5,
-      image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/800px-Python-logo-notext.svg.png',
+      image: '../../assets/icons/Python.png',
       name: 'Python'
     },
     {
       id: 6,
-      image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSckhKOYhktJvsIFaKqSN__XwOGRQ3vT3lDUA&s',
+      image: '../../assets/icons/Mulesoft.png',
       name: 'MuleSoft'
     }
   ];
@@ -96,7 +110,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   blogs = [
     {
       image:
-        'https://img.freepik.com/vector-premium/concepto-web-servicio-blogs-estilo-dibujos-animados_9209-4759.jpg',
+        '../../assets/images/Startup1.png',
       time: '27 Nov 2024',
       title: 'Startups',
       content:
@@ -104,7 +118,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
     },
     {
       image:
-        'https://img.freepik.com/vector-premium/concepto-web-servicio-blogs-estilo-dibujos-animados_9209-4759.jpg',
+        '../../assets/images/Social.png',
       time: '27 Nov 2024',
       title: 'Social',
       content:
@@ -112,7 +126,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
     },
     {
       image:
-        'https://img.freepik.com/vector-premium/concepto-web-servicio-blogs-estilo-dibujos-animados_9209-4759.jpg',
+        '../../assets/images/Apps.png',
       time: '27 Nov 2024',
       title: 'Apps',
       content:
@@ -142,52 +156,107 @@ export class HomeComponent implements OnInit, AfterViewInit {
   happy_customers_list: { id: number; image: string }[] = [];
   columnClass: string = 'col-lg-2';
 
+  technologies: { name: string }[] = [
+    { name: 'DA/DE with GenAI, Azure & AWS' },
+    { name: 'DS with GenAI' },
+    { name: 'Devops & Python' },
+    { name: 'Java FullStack' },
+    { name: 'Android & IOS' },
+    { name: 'Salesforce with Data Cloud' },
+    { name: '.Net Developer Fullstack' },
+    { name: 'Network Engineer/Security' },
+    { name: 'MuleSoft' },
+    { name: 'SAP' },
+    { name: 'Boomi' },
+    { name: 'Service Now' },
+    { name: 'Data Bricks' },
+    { name: 'Snow Flake' },
+    { name: 'BigData/ Hadoop' },
+    { name: 'Salesforce with Agent Force' }
+  ];
+
+  locations: { name: string, lat: number, lon: number }[] = [
+    { name: 'Washington', lat: 47.24672144330764, lon: -121.21555194485947 },
+    { name: 'San Francisco', lat: 37.7749, lon: -122.4194 },
+    { name: 'London', lat: 51.5074, lon: -0.1278 },
+    { name: 'Sydney', lat: -33.8688, lon: 151.2093 },
+    { name: 'Tokyo', lat: 35.6762, lon: 139.6503 },
+    { name: 'Berlin', lat: 52.52, lon: 13.4050 },
+    { name: 'Paris', lat: 48.8566, lon: 2.3522 },
+    { name: 'Mumbai', lat: 19.0760, lon: 72.8777 },
+    { name: 'Dubai', lat: 25.276987, lon: 55.296249 },
+    { name: 'Hyderabad', lat: 17.401456573052947, lon: 78.40518030212908 }
+  ];
+
+  experiences: { name: string }[] = [
+    { name: '0-1 Years' },
+    { name: '1-3 Years' },
+    { name: '3-5 Years' },
+    { name: '5-7 Years' },
+    { name: '7-10 Years' },
+    { name: '10+ Years' }
+  ];
+
+  roles: { name: string }[] = [
+    { name: 'Developer' },
+    { name: 'Team Lead' },
+    { name: 'Manager' },
+    { name: 'Architect' },
+    { name: 'Tester' },
+    { name: 'Data Scientist' }
+  ];
+
+  selectedTechnology: string | undefined;
+  selectedLocation: string | undefined;
+  selectedExperience: string | undefined;
+  selectedRole: string | undefined;
+
+  isOpenTechnology = false;
+  isOpenLocation = false;
+  isOpenExperience = false;
+  isOpenRole = false;
+
+  searchQueryTechnology: string = '';
+  searchQueryLocation: string = '';
+  searchQueryExperience: string = '';
+  searchQueryRole: string = '';
+
+  filteredTechnologies = this.technologies;
+  filteredLocations = this.locations;
+  filteredExperiences = this.experiences;
+  filteredRoles = this.roles;
+
+
+  mapUrl: SafeResourceUrl = '';  
+
 
   constructor(
     @Inject(PLATFORM_ID) private platformId: Object,
-    private router:Router
-  ) {}
+    private router:Router,
+    private sanitizer: DomSanitizer
+  ) {
+    const defaultUrl = `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d46830151.11795828!2d-119.8093025!3d44.24236485!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54eab584e432360b%3A0x1c3bb99243deb742!2sUnited%20States!5e0!3m2!1sen!2sin!4v1732760839892!5m2!1sen!2sin`;
+    this.mapUrl = this.sanitizer.bypassSecurityTrustResourceUrl(defaultUrl);
+  }
 
   ngOnInit(): void {
-    if (isPlatformBrowser(this.platformId)) {
-      this.setResponsiveClass(); // Set initial class only in the browser
-    }
+    window.scrollTo(0, 0);
     Chart.register(
       LinearScale,
       CategoryScale,
       BarElement,
-      LineElement, // Register LineElement
+      LineElement, 
       PointElement, // Register PointElement
       Title,
       Tooltip,
       Legend,
       BarController,
-      LineController // Register LineController
+      LineController 
     );
-    this.getCustomers(1)
-  }
-  @HostListener('window:resize', ['$event'])
-  onResize() {
-    if (isPlatformBrowser(this.platformId)) {
-      this.setResponsiveClass(); // Adjust the class only in the browser
-    }
+    this.getCustomers(1);
   }
 
-  setResponsiveClass() {
-    if (isPlatformBrowser(this.platformId)) {
-      const screenWidth = window.innerWidth;
 
-      if (screenWidth < 576) {
-        this.columnClass = 'col-sm-12'; // Mobile view
-      } else if (screenWidth >= 576 && screenWidth < 992) {
-        this.columnClass = 'col-sm-6'; // Tablet view
-      } else if (screenWidth >= 992) {
-        this.columnClass = 'col-sm-2'; // Laptop view
-      }
-
-      console.log('screenWidth',screenWidth,this.columnClass)
-    }
-  }
   getService(service:any){
      this.router.navigate([`service/${service.id}`])
   }
@@ -202,18 +271,73 @@ export class HomeComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    // Ensure code that accesses the DOM only runs in the browser
     if (isPlatformBrowser(this.platformId)) {
       this.createChart();
     }
+  }
+  
+  toggleDropdown(type: 'technology' | 'location' | 'experience' | 'role'): void {
+    this.closeAllDropdowns();
+    if (type === 'technology') this.isOpenTechnology = !this.isOpenTechnology;
+    else if (type === 'location') this.isOpenLocation = !this.isOpenLocation;
+    else if (type === 'experience') this.isOpenExperience = !this.isOpenExperience;
+    else if (type === 'role') this.isOpenRole = !this.isOpenRole;
+  }
+
+  closeAllDropdowns(): void {
+    this.isOpenTechnology = false;
+    this.isOpenLocation = false;
+    this.isOpenExperience = false;
+    this.isOpenRole = false;
+  }
+
+  filterOptions(type: 'technology' | 'location' | 'experience' | 'role'): void {
+    if (type === 'technology') {
+      this.filteredTechnologies = this.technologies.filter(option =>
+        option.name.toLowerCase().includes(this.searchQueryTechnology.toLowerCase())
+      );
+    } else if (type === 'location') {
+      this.filteredLocations = this.locations.filter(option =>
+        option.name.toLowerCase().includes(this.searchQueryLocation.toLowerCase())
+      );
+    } else if (type === 'experience') {
+      this.filteredExperiences = this.experiences.filter(option =>
+        option.name.toLowerCase().includes(this.searchQueryExperience.toLowerCase())
+      );
+    } else if (type === 'role') {
+      this.filteredRoles = this.roles.filter(option =>
+        option.name.toLowerCase().includes(this.searchQueryRole.toLowerCase())
+      );
+    }
+  }
+
+  selectOption(type: 'technology' | 'location' | 'experience' | 'role', option: any): void {
+    if (type === 'technology') {
+      this.selectedTechnology = option.name;
+      this.isOpenTechnology = false;
+    } else if (type === 'location') {
+      this.selectedLocation = option.name;
+      this.isOpenLocation = false;
+      this.updateMapUrl(option.lat, option.lon);
+    } else if (type === 'experience') {
+      this.selectedExperience = option.name;
+      this.isOpenExperience = false;
+    } else if (type === 'role') {
+      this.selectedRole = option.name;
+      this.isOpenRole = false;
+    }
+  }
+
+  updateMapUrl(lat: number, lon: number): void {
+    const url = `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d46830151.11795828!2d${lon}!3d${lat}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54eab584e432360b%3A0x1c3bb99243deb742!2sUnited%20States!5e0!3m2!1sen!2sin!4v1732760839892!5m2!1sen!2sin`;
+    this.mapUrl = this.sanitizer.bypassSecurityTrustResourceUrl(url);
   }
 
   createChart(): void {
     if (isPlatformBrowser(this.platformId)) {
       const canvas = document.getElementById('talentChart') as HTMLCanvasElement;
       const ctx = canvas?.getContext('2d');
-  
-      // Destroy the previous chart instance if it exists
+      
       if (this.chart) {
         this.chart.destroy();
       }
@@ -256,8 +380,9 @@ export class HomeComponent implements OnInit, AfterViewInit {
         { x: 2, y: 3 },
         { x: 2, y: 6 },
         { x: 3, y: 12 },
-        { x: 4, y: 5 },
-        { x: 5, y: 8 },
+        { x: 4, y: 4 },
+        { x: 4, y: 9 },
+        { x: 5, y: 2 },
         { x: 6, y: 7 },
         { x: 7, y: 9 },
       ];
@@ -272,22 +397,36 @@ export class HomeComponent implements OnInit, AfterViewInit {
                 label: 'Talent Analysis',
                 data: data,
                 backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                borderColor: 'rgba(75, 192, 192, 1)',
-                borderWidth: 1,
-                showLine: true, // Connect the points with a line
+                borderColor: 'white',
+                borderWidth: 2,
+                showLine: true, 
               },
             ],
           },
           options: {
             responsive: true,
+            plugins: {
+              legend: {
+                labels: {
+                  color: 'white', 
+                  font: {
+                    size: 14, 
+                  },
+                },
+              },
+            },
             scales: {
               x: {
                 type: 'linear',
                 position: 'bottom',
                 ticks: {
+                  color: 'white', 
                   callback: function (value, index) {
                     return xAxisLabels[index] || ''; // Map X-axis numeric value to labels
                   },
+                },
+                grid: {
+                  color: 'rgba(255, 255, 255, 0.2)', 
                 },
               },
               y: {
@@ -295,12 +434,17 @@ export class HomeComponent implements OnInit, AfterViewInit {
                 min: 0,
                 max: yAxisLabels.length - 1, // Ensure Y-axis covers all labels
                 ticks: {
-                  stepSize: 1, // Ensure all labels are displayed
+                  stepSize: 1, 
+                  color: 'white',
                   callback: function (value:any) {
                     return yAxisLabels[value] || ''; // Map Y-axis numeric value to labels
                   },
                 },
+                grid: {
+                  color: 'rgba(255, 255, 255, 0.2)', 
+                },
               },
+              
             },
           },
         });

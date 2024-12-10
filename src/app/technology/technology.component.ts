@@ -52,6 +52,7 @@ export class TechnologyComponent implements OnInit {
   ){}
 
   ngOnInit(): void {
+    window.scrollTo(0, 0);
     this.id = Number(this.route.snapshot.paramMap.get('id'));
     this.loadService(this.id)  
   }

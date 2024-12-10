@@ -1,8 +1,171 @@
 /* You can add global styles to this file, and also import other style files */
-body{
-    background: linear-gradient(to right, #6A014C, #0B0140);
+body {
+  // background-color: #27635e; 
+  background-color: #2e7570;
+  height: 100%;
+  overflow-x: hidden;
+  margin: 0;
+  font-family: 'Poppins';
+  // font-family: 'Montserrat';
+  // font-family: 'Lato';
+  // background-repeat: no-repeat;
+}
+
+label {
+  font-weight: 500;
+  color: white;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #00948a;
+  border-radius: 4px;
+  font-size: 16px;
+  margin-bottom: 20px;
+  background-color: white;
+}
+
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #00948a;
+  border-radius: 4px;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.action_btn {
+  border: #00948a;
+  background-color: #029d90;
+  color: white;
+}
+
+.action_btn:hover {
+  border: #00948a;
+  background-color: #183e3b;
+  color: white;
+}
+
+.modal-title {
+  color: white;
+}
+
+.btn-close {
+  color: white !important;
+}
+.modal_btns{
+  text-align: right;
+}
+
+.modal-content {
+  background-color: #27635e;
+  border: none;
+}
+
+.modal-header,
+.modal-footer {
+  border: none;
+}
+
+.services {
+  overflow-x: hidden;
+}
+.text_color{
+  color: white;
+}
+
+.contact_form_btn{
+  background-color: #20504d;
+  border: 1px solid #20504d;
+  padding: 10px;
+  font-size: 18px;
+  width: 100%;
+  text-decoration: none;
+  color: white;
+  border-radius: 50px;
+  margin-top: 10px;
+}
+
+.contact_form_btn:hover {
+  background-color: #1a8b84;
+  border: 1px solid #1a8b84;
+  padding: 10px;
+  font-size: 18px;
+  width: 100%;
+  text-decoration: none;
+  color: white;
+  border-radius: 50px;
+  box-shadow: 
+  5px 5px 10px rgba(0, 0, 0, 0.2), 
+  -5px -5px 10px rgba(0, 0, 0, 0.5), 
+  0px 4px 6px rgba(255, 255, 255, 0.2); 
+}
+
+
+.lern_more_btn {
+  background-color: #20504d;
+  border: 1px solid #20504d;
+  padding: 10px;
+  font-size: 18px;
+  width: 50%;
+  text-decoration: none;
+  color: white;
+  border-radius: 50px;
+}
+
+.lern_more_btn:hover {
+  background-color: #1a8b84;
+  border: 1px solid #1a8b84;
+  padding: 10px;
+  font-size: 18px;
+  width: 50%;
+  text-decoration: none;
+  color: white;
+  border-radius: 50px;
+  box-shadow: 
+  5px 5px 10px rgba(0, 0, 0, 0.2), 
+  -5px -5px 10px rgba(0, 0, 0, 0.5), 
+  0px 4px 6px rgba(255, 255, 255, 0.2); 
+}
+
+@media (max-width: 576px) {
+  .service_tagline {
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+  }
+
+  .tag_image {
+    width: 100%;
     height: 100%;
-    overflow-x: hidden;
-    margin: 0;
-    // background-repeat: no-repeat;
+    margin-top: 0px;
+  }
+
+  .service_tagline_content {
+    color: white;
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 992px) {
+  .service_tagline {
+    color: white;
+    font-size: 45px;
+    font-weight: bold;
+  }
+
+  .service_tagline_content {
+    color: white;
+    font-size: 16px;
+  }
+
+  .tag_image {
+    width: 100%;
+    height: 100%;
+    margin-top: 100px;
+  }
+
 }

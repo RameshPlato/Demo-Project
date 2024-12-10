@@ -1,11 +1,9 @@
 <nav class="navbar navbar-expand-lg">
   <div class="container-fluid">
-    <!-- Left-side image -->
     <a class="navbar-brand" href="#">
-      <img src="https://achevers-file-manager.s3.ap-south-1.amazonaws.com/uploads/think_source_logo.png" alt="Logo" />
+     <img src="../../assets/images/think_source_logo.png" alt="">
     </a>
 
-    <!-- Toggle button for mobile view -->
     <button
   class="navbar-toggler"
   type="button"
@@ -17,26 +15,111 @@
   <span class="navbar-toggler-icon"></span>
 </button>
 
-    <!-- Right-side navigation links -->
     <div
       class="collapse navbar-collapse"
       [ngClass]="{ show: !isNavbarCollapsed }"
       id="navbarNav"
     >
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item">
-          <a class="nav-link" (click)="getService(1)">Services</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="**">Career</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="">Blog</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="">Contact</a>
-        </li>
-      </ul>
+    <ul class="navbar-nav ms-auto">
+      <li class="nav-item">
+        <a 
+          class="nav-link" 
+          [routerLink]="['/home']" 
+          routerLinkActive="router-link-active">
+          Home
+        </a>
+      </li>
+      <li class="nav-item">
+        <a 
+          class="nav-link" 
+          [routerLink]="['/service/1']"
+          routerLinkActive="router-link-active">
+          Our Services
+        </a>
+      </li>
+      <li class="nav-item">
+        <a 
+          class="nav-link" 
+          [routerLink]="['/our-specialties']" 
+          routerLinkActive="router-link-active">
+          Our Specialty
+        </a>
+      </li>
+      <li class="nav-item">
+        <a 
+          class="nav-link" 
+          [routerLink]="['/careers']" 
+          routerLinkActive="router-link-active">
+          Career
+        </a>
+      </li>
+      <li class="nav-item">
+        <a 
+          class="nav-link" 
+          [routerLink]="['/contact-us']" 
+          routerLinkActive="router-link-active">
+          Contact
+        </a>
+      </li>
+      <li class="nav-item link_btns">
+        <a 
+          class="nav-link" 
+          data-bs-toggle="modal" 
+          data-bs-target="#exampleModal">
+          Find&nbsp;a&nbsp;Job
+        </a>
+      </li>
+      <li class="nav-item link_btns">
+        <a 
+          class="nav-link" 
+          [routerLink]="['/find-talent']" 
+          routerLinkActive="router-link-active">
+          Find&nbsp;Talent
+        </a>
+      </li>
+    </ul>
+    
     </div>
   </div>
 </nav>
+
+
+<div class="modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" (hidden.bs.modal)="onModalClose()">
+  <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h2 class="modal-title" id="exampleModalLabel">Job Application Form</h2>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" style="filter: invert(1);"></button>
+
+          </div>
+          <div class="modal-body">
+              <form (ngSubmit)="onSubmit()" [formGroup]="jobForm">
+                  <div mat-dialog-content>
+                      <div class="row">
+                          <div class="col-sm-12">
+                              <label for="name">Name:</label>
+                              <input id="name" type="text" formControlName="name" />
+                          </div>
+                          <div class="col-sm-12">
+                              <label for="email">Email:</label>
+                              <input id="email" type="email" formControlName="email" />
+                          </div>
+                          <div class="col-sm-12">
+                              <label for="workExperience">Work Experience:</label>
+                              <input id="workExperience" type="text" formControlName="workExperience" />
+                          </div>
+                          <div class="col-sm-12">
+                              <label for="skills">Skills:</label>
+                              <input id="skills" type="text" formControlName="skills" />
+                          </div>
+                      </div>
+                  </div>
+              </form>
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn action_btn" [disabled]="!jobForm.valid">Submit</button>
+          </div>
+      </div>
+  </div>
+</div>

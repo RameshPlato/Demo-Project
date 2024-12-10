@@ -1,0 +1,151 @@
+<div class="modal" *ngIf="isDialogOpen" (click)="closeDialogOnBackdrop($event)">
+    <!-- General Inquiry Form -->
+    <div class="modal-content" *ngIf="modalType == 'general'">
+        <h2 class="modal-title">General Inquiry Form</h2>
+        <p class="text_color">Have a general question or need more information? Reach out to
+            us here.</p>
+        <br>
+        <form (ngSubmit)="onSubmit()" [formGroup]="generalForm">
+            <div >
+                <div class="row">
+                    <div class="col-sm-12">
+                        <label for="name">Full&nbsp;Name&nbsp;<sup>*</sup></label>
+                        <input id="name" type="text" formControlName="name" />
+                    </div>
+                    <div class="col-sm-12">
+                        <label for="email">Email&nbsp;<sup>*</sup></label>
+                        <input id="email" type="email" formControlName="email" />
+                    </div>
+                    <div class="col-sm-12">
+                        <label for="workExperience">Phone Number</label>
+                        <input id="mobile" type="number" formControlName="mobile"/>
+                    </div>
+                    <div class="col-sm-12">
+                        <label for="skills">Message</label>
+                        <textarea name="message" id="message" formControlName="message"></textarea>
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal_btns">
+                <button class="btn btn-secondary" (click)="closeDialog()">Cancel</button>&nbsp;&nbsp;
+                <button class="btn action_btn" type="submit" [disabled]="!generalForm.valid">Submit Inquiry</button>
+            </div>
+        </form>
+    </div>
+
+
+    <!-- Job Seekers Form -->
+    <div class="modal-content" *ngIf="modalType == 'job_seekers'">
+        <h2 class="modal-title">Job Seekers Form</h2>
+        <p class="text_color">Looking for a new opportunity? Submit your resume and
+            message our team.</p>
+        <br>
+        <form (ngSubmit)="onSubmit()" [formGroup]="jobForm">
+            <div >
+                <div class="row">
+                    <div class="col-sm-12">
+                        <label for="name">Full&nbsp;Name&nbsp;<sup>*</sup></label>
+                        <input id="name" type="text" formControlName="name" />
+                    </div>
+                    <div class="col-sm-12">
+                        <label for="email">Email&nbsp;<sup>*</sup></label>
+                        <input id="email" type="email" formControlName="email" />
+                    </div>
+                    <div class="col-sm-12">
+                        <label for="workExperience">Upload Resume&nbsp;<sup>*</sup></label>
+                        <input id="resume" type="file" formControlName="resume" accept=".pdf"/>
+                    </div>
+                    <div class="col-sm-12">
+                        <label for="skills">Message</label>
+                        <textarea name="message" id="message" formControlName="message"></textarea>
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal_btns">
+                <button class="btn btn-secondary" (click)="closeDialog()">Cancel</button>&nbsp;&nbsp;
+                <button class="btn action_btn" type="submit" [disabled]="!jobForm.valid">Submit Resume</button>
+            </div>
+        </form>
+    </div>
+
+     <!-- Employers Form -->
+     <div class="modal-content" *ngIf="modalType == 'employers'">
+        <h2 class="modal-title">Employers Form</h2>
+        <p class="text_color">Need staffing solutions? Contact us to discuss your workforce
+            needs.</p>
+        <form (ngSubmit)="onSubmit()" [formGroup]="employersForm">
+            <div >
+                <div class="row">
+                    <div class="col-sm-12">
+                        <label for="name">Company&nbsp;Name&nbsp;<sup>*</sup></label>
+                        <input id="name" type="text" formControlName="company_name" />
+                    </div>
+                    <div class="col-sm-12">
+                        <label for="name">Contact&nbsp;Name&nbsp;<sup>*</sup></label>
+                        <input id="name" type="text" formControlName="contact_name" />
+                    </div>
+                    <div class="col-sm-12">
+                        <label for="email">Email&nbsp;<sup>*</sup></label>
+                        <input id="email" type="email" formControlName="email" />
+                    </div>
+                    <div class="col-sm-12">
+                        <label for="workExperience">Phone Number</label>
+                        <input id="mobile" type="number" formControlName="mobile"/>
+                    </div>
+                    <div class="col-sm-12">
+                        <label for="skills">Staffing Needs or Message</label>
+                        <textarea name="message" id="message" formControlName="message"></textarea>
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal_btns">
+                <button class="btn btn-secondary" (click)="closeDialog()">Cancel</button>&nbsp;&nbsp;
+                <button class="btn action_btn" type="submit" [disabled]="!employersForm.valid">Contact Us</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Veterans Form -->
+    <div class="modal-content" *ngIf="modalType == 'veterans'">
+        <h2 class="modal-title">Veterans Form</h2>
+        <p class="text_color">Veterans seeking IT careers? Let us guide you on your journey.</p>
+        <br>
+        <form (ngSubmit)="onSubmit()" [formGroup]="veteransForm">
+            <div >
+                <div class="row">
+                    <div class="col-sm-12">
+                        <label for="name">Name&nbsp;<sup>*</sup></label>
+                        <input id="name" type="text" formControlName="name" />
+                    </div>
+                    <div class="col-sm-12">
+                        <label for="email">Email&nbsp;<sup>*</sup></label>
+                        <input id="email" type="email" formControlName="email" />
+                    </div>
+                    <div class="col-sm-12">
+                        <label for="workExperience">Military Branch</label>
+                        <input id="military_Branch" type="text" formControlName="military_Branch"/>
+                    </div>
+                    <div class="col-sm-12">
+                        <label for="workExperience">Transition Date</label>
+                        <input id="transition_date" type="date" formControlName="transition_date"/>
+                    </div>
+                    <div class="col-sm-12">
+                        <label for="skills">Staffing Needs or Message</label>
+                        <textarea name="message" id="message" formControlName="message"></textarea>
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal_btns">
+                <button class="btn btn-secondary" (click)="closeDialog()">Cancel</button>&nbsp;&nbsp;
+                <button class="btn action_btn" type="submit" [disabled]="!veteransForm.valid">Connect with Us</button>
+            </div>
+        </form>
+    </div>
+
+
+
+</div>

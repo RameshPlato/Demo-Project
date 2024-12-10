@@ -9,7 +9,7 @@
                 </p>
             </div>
             <div class="col-sm-6 d-flex align-items-center justify-content-center">
-                <img src="https://png.pngtree.com/png-vector/20240427/ourmid/pngtree-a-man-work-in-office-png-image_12329854.png"
+                <img src="../../assets/bannerimg/TalentSolutions.png"
                     class="tag_image" alt="">
             </div>
         </div> <br><br>
@@ -17,7 +17,7 @@
    </div>
     <div class="row ">
         <div class="col-sm-2 service_item" *ngFor="let item of technology_list"  (click)="loadService(item.id)"
-        [style.background-color]="item.status ? '#360227':''">
+        [style.background-color]="item.status ? '#20504d':''">
             {{item.name}}
         </div>
     </div>

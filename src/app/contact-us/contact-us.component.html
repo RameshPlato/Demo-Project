@@ -1,0 +1,44 @@
+<app-navbar class="navbar"></app-navbar>
+<br><br>
+<div class="services">
+    <div class="container"><br><br>
+        <div class="row">
+            <div class="sub_heading">
+                <h2>Get In Touch</h2>
+            </div><br><br><br>
+            <div class="col-sm-4" *ngFor="let item of contact_list">
+                <div class="card contact_card">
+                    <div [innerHTML]="item.icon" class="contact_icon"></div>
+                    <h2>
+                        <a href="mailto:{{item.value}}" target="_blank" rel="noopener noreferrer" *ngIf="item.name == 'Email'">{{item.value}}</a>
+                        <span *ngIf="item.name != 'Email'">{{item.value}}</span>
+                    </h2>
+                </div>
+            </div>
+        </div>
+
+        <br><br>
+
+        <div class="row">
+            <div class="cool-sm-12">
+                <p class="text_color">If you have any questions or concerns, please fill out the appropriate form below. Our team will reach out to assist you promptly.   </p>
+            </div><br><br>
+            <div class="col-sm-3">
+                <button class="btn contact_form_btn" (click)="onFindJobClick('general')">General Inquiry Form</button>
+            </div>
+            <div class="col-sm-3">
+                <button class="btn contact_form_btn" (click)="onFindJobClick('job_seekers')">Job Seekers Form</button>
+            </div>
+            <div class="col-sm-3">
+                <button class="btn contact_form_btn" (click)="onFindJobClick('employers')">Employers Form</button>
+            </div>
+            <div class="col-sm-3">
+                <button class="btn contact_form_btn" (click)="onFindJobClick('veterans')">Veterans Form</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+<br><br>
+<app-job-application></app-job-application>
+<app-footer></app-footer>

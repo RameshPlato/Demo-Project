@@ -1,0 +1,124 @@
+
+@media (max-width: 576px) {
+   
+}
+@media (min-width: 992px) {
+    .carousel-control-prev,
+    .carousel-control-next {
+      position: absolute;
+      top: 50%;
+      z-index: 1;
+      width: 5%;
+      transform: translateY(-40%);
+      margin: -50px;
+    }
+    
+}
+
+// .serv{
+//       background-color: #27635e; 
+// }
+
+
+.service_item{
+    color: white;
+    font-size: 20px;
+    background-color: #27635e;
+    text-align: center;
+    padding: 10px;
+    cursor: pointer;
+}
+.services_details{
+    text-align: center;
+    color: white;
+}
+.content{
+    text-align: left;
+}
+.sub_heading{
+    font-size: 20px;
+}
+
+.sub_heading {
+    text-align: center;
+  
+  }
+  
+  .sub_heading h3 {
+    font-weight: lighter;
+    color: #FFF55B;
+    font-size: 22px;
+  }
+  
+  .sub_heading h2 {
+    color: #fff;
+  }
+
+  .blog_card {
+    width: 100%;
+    // max-width: 350px;
+    margin-top: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #2e7570;
+    transition: transform 0.3s ease;
+  }
+  
+  .blog_card .card-body {
+    padding: 15px;
+    height: 250px;
+  }
+  
+  .blog_card .card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: white;
+  }
+  
+  .blog_card .card-text {
+    font-weight: lighter;
+    font-size: 1rem;
+    color: white;
+    margin-bottom: 15px;
+  }
+  
+  .blog_card span {
+    color: white;
+  }
+  .carousel-control-prev-icon,
+.carousel-control-next-icon {
+  margin-top: 80px;
+}
+.carousel-content {
+  color: white;
+  max-height: 100%;
+  overflow: hidden; 
+}
+
+.carousel-inner {
+  height: 100%; 
+}
+
+.carousel-content span {
+  color: #FFF55B;
+}
+
+.specialties{
+  color: white;
+  margin-top: 20px;
+}
+.specialties h1{
+  color: white;
+  font-size: 30px;
+}
+.specialties p{
+  color: white;
+  margin-left: 50px;
+}
+
+
+
+  

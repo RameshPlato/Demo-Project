@@ -1,60 +1,55 @@
 <div class="footer">
     <div class="container">
+        <br>
         <div class="row">
             <div class="col-sm-12">
-                <img src="https://achevers-file-manager.s3.ap-south-1.amazonaws.com/uploads/think_source_logo.png" alt="">
+                    <img src="../../assets/images/think_source_logo.png" alt="">
             </div>
-        </div>
+        </div><br>
         <div class="row">
             <div class="col-sm-4 contact">
-              <h6>Contact Us</h6><br>
-              <p><a href="mailto:{{mail}}">{{mail}}</a></p>
-              <p>+1-2345-6789</p>
-              <p>123 Ave, New York, USA</p>
-              
-              <i class="fab fa-linkedin"></i>
-              <i class="fab fa-facebook"></i>
-              <i class="fab fa-twitter"></i>
-              <i class="fab fa-instagram"></i>
+                <h6>Contact Us</h6><br>
+                <p><a href="mailto:{{mail}}">{{mail}}</a></p>
+                <p>+1-2345-6789</p>
+                <p>123 Ave, New York, USA</p>
+                
+                <a href="https://www.linkedin.com/in/think-source-a1253533b/" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=61569551857471" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a href="https://x.com/SourceThin16640" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://www.instagram.com/think__source/" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-instagram"></i>
+                </a>
 
             </div>
-            <div class="col-sm-2">
+            <div class="col-sm-3">
                 <h6>Services</h6><br>
-                <p>
-                    <span (click)="getService(1)">ManPower RPO</span>
-                </p>
-                <p>
-                    <span (click)="getService(3)">HR Services</span>
-                </p>
-                <p>
-                    <span (click)="getService(2)">BPO</span>
+                <p *ngFor="let service of services_list" (click)="getService(service.id)">
+                    <span>{{service.title}}</span>
                 </p>
             </div>
-            <div class="col-sm-2">
+            <div class="col-sm-3">
                 <h6>Technologies</h6><br>
                 <p *ngFor="let item of technology_list" (click)="getSkillDetails(item)">
-                   <span>{{item.name}}</span>
+                    <span>{{item.name}}</span>
                 </p>
-                 <!-- <p>DA/DE with GenAI</p>
-                 <p>Azure & AWS</p>
-                 <p>DS with genie</p>
-                 <p>Devops & Python</p>
-                 <p>Java FullStack</p>
-                 <p>Android & IOS</p>
-                 <p>Network Security</p>
-                 <p>Salesforce with Data Cloud</p> -->
             </div>
-            <div class="col-sm-2">
+            <!-- <div class="col-sm-2">
                 <h6>Careers</h6><br>
-                <p>Find a Job</p>
-
+                <p data-bs-toggle="modal" data-bs-target="#exampleModal">Find a Job</p>
                 <h6>Blogs</h6><br>
-                
-            </div>
+            </div> -->
             <div class="col-sm-2">
                 <h6>Get the app</h6><br>
-                <img src="https://cdn.freebiesupply.com/logos/large/2x/download-on-the-app-store-apple-logo-black-and-white.png" alt="" style="width: 100%;height: auto;"><br><br>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Google_Play_Store_badge_EN.svg/2560px-Google_Play_Store_badge_EN.svg.png" alt="" style="width: 100%;height: auto;">
+                <img src="../../assets/images/download-apple-logo.png"
+                    alt="" style="width: 100%;height: auto;"><br><br>
+                <img src="../../assets/images/Google_Play_Store_badge_EN.svg.webp"
+                    alt="" style="width: 100%;height: auto;">
 
             </div>
         </div><br>
@@ -75,4 +70,49 @@
     </div>
     <br>
 
+</div>
+
+
+<!-- <button (click)="openDialog()">Open Dialog</button> -->
+
+<!-- <app-job-application [isOpen]="isDialogOpen"></app-job-application> -->
+
+<div class="modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" (hidden.bs.modal)="onModalClose()">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" id="exampleModalLabel">Job Application Form</h2>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" style="filter: invert(1);"></button>
+
+            </div>
+            <div class="modal-body">
+                <form (ngSubmit)="onSubmit()" [formGroup]="jobForm">
+                    <div mat-dialog-content>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <label for="name">Name:</label>
+                                <input id="name" type="text" formControlName="name" />
+                            </div>
+                            <div class="col-sm-12">
+                                <label for="email">Email:</label>
+                                <input id="email" type="email" formControlName="email" />
+                            </div>
+                            <div class="col-sm-12">
+                                <label for="workExperience">Work Experience:</label>
+                                <input id="workExperience" type="text" formControlName="workExperience" />
+                            </div>
+                            <div class="col-sm-12">
+                                <label for="skills">Skills:</label>
+                                <input id="skills" type="text" formControlName="skills" />
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary action_btn" [disabled]="!jobForm.valid">Submit</button>
+            </div>
+        </div>
+    </div>
 </div>

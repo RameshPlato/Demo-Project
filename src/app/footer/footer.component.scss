@@ -1,11 +1,11 @@
-.footer{
+.footer {
     background-color: black;
     color: white;
 }
 
 .footer h6 {
     font-size: 25px;
-    
+
 }
 
 .footer p {
@@ -23,9 +23,45 @@
     margin: 8px;
     cursor: pointer;
 }
-.copyright{
+
+.copyright {
     color: rgb(183, 183, 183);
 }
- p span{
+
+p {
     cursor: pointer;
- }
+}
+
+label {
+    font-weight: 600;
+    color: white;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    // border: 2px solid #890262;
+    border-radius: 4px;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.action_btn {
+    border: #890262;
+    background: linear-gradient(to bottom, #c80390, #0B0140);
+    color: white;
+}
+
+.modal-title {
+    color: white;
+}
+
+.btn-close {
+    color: white !important;
+}
+
+.modal-content {
+    background-color: #2e7570;
+    border: none;
+}

@@ -1,16 +1,85 @@
-/* Adjust the toggle button to match your theme */
-.navbar-toggler {
-  border-color: white;
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%; 
+  background-color: #27635e; 
+  // background-color: #27635e; 
+
+  z-index: 10; 
 }
 
-.nav-item {
-  font-size: 18px;
+.container-fluid {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Ensure proper spacing between logo and nav-items */
+}
+
+
+.navbar-toggler {
+  border-color: white;
 }
 
 .navbar-toggler-icon {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(255,255,255,1)' stroke-width='2' stroke-linecap='round' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
 }
 
+.navbar-nav {
+  align-items: left;
+}
+
+.nav-link.router-link-active {
+  // background-color: #2e7570; 
+  border-bottom: 3px solid #01b3a7;
+  color: white; 
+  // border-radius: 5px;
+  // padding: 10px;
+}
+
+
+.nav-item {
+  font-size: 16px;
+  cursor: pointer;
+  margin-left: 15px; /* Add spacing between nav items */
+}
+
 .navbar-nav .nav-link {
   color: white !important;
+  transition: color 0.3s ease; /* Add smooth hover effect */
 }
+
+.navbar-nav .nav-link:hover {
+  color: #ffd700; /* Highlight color on hover */
+}
+
+
+
+
+
+@media (min-width: 992px) {
+.link_btns{
+  padding: 0px 20px;
+  background-color: #2e7570;  
+  // background: linear-gradient(to right, #c2058c, #1e02a9);
+  backdrop-filter: blur(10px); 
+  border-radius: 50px;
+}
+
+.link_btns:hover{
+  box-shadow: 
+  5px 5px 10px rgba(0, 0, 0, 0.2), 
+  -5px -5px 10px rgba(0, 0, 0, 0.5), 
+  0px 4px 6px rgba(255, 255, 255, 0.2); 
+}
+
+}
+@media (max-width: 576px) {
+  .link_btns{
+    background: linear-gradient(to bottom, #2e7570, #0B0140);
+    padding: 0px 20px;
+    border-radius: 50px;
+    // width: 100%;
+    margin-top: 10px;
+  }
+}
+
+
